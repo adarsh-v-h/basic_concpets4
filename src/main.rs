@@ -48,7 +48,7 @@ fn main() {
     /* write a function that takes a string of words separated by spaces and returns the first word it finds in that string.
     If the function doesn’t find a space in the string, the whole string must be one word, so the entire string should be returned.*/
     // we will create a string and pass its reference value to a function and work there.
-    let mut s69:String = String::from("noice");
+    let s69:String = String::from("noice");
     // we will take the return value from the function in usize, which will tell us when the first space " " is occured, to the take out the first work
     let first:usize = first_word(&s69); // reference to s69
     println!("The index of the first space is {}", first);
@@ -73,18 +73,18 @@ fn main() {
     // also we can say String literals are Slices, thats why they are immutable, so string literals can be called as immutable reference.
     let my_string = String::from("hello world");
     // `better_first_word` works on slices of `String`s, whether partial or whole
-    let word = better_first_word(&my_string[0..6]);
-    let word = better_first_word(&my_string[..]);
+    let _word = better_first_word(&my_string[0..6]);
+    let _word = better_first_word(&my_string[..]);
     // `better_first_word` also works on references to `String`s, which are equivalent
     // to whole slices of `String`s
-    let word = better_first_word(&my_string);
+    let _word = better_first_word(&my_string);
     let my_string_literal = "hello world";
     // `better_first_word` works on slices of string literals, whether partial or whole
-    let word = better_first_word(&my_string_literal[0..6]);
-    let word = better_first_word(&my_string_literal[..]);
+    let _word = better_first_word(&my_string_literal[0..6]);
+    let _word = better_first_word(&my_string_literal[..]);
     // Because string literals *are* string slices already,
     // this works too, without the slice syntax!
-    let word = better_first_word(my_string_literal);
+    let _word = better_first_word(my_string_literal);
     // we can use slices for arrays too
     let a = [1,2,3,4,5];
     let a_sl = &a[1..3];
